@@ -1,0 +1,233 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    color: #fff;
+}
+
+/* Live Wallpaper Video Background */
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* Overlay sangat tipis dan TANPA blur agar video anime terang & jernih 100% */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(10, 10, 20, 0.15); /* Lapisan gelap dikurangi jadi 15% saja */
+    z-index: -1;
+}
+
+/* Layout Container (Diatur agar konten naik ke atas) */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Konten berkumpul di atas */
+    min-height: 100vh;
+    padding: 20px;
+    gap: 16px; /* Jarak rapat antara judul dan kotak downloader */
+}
+
+header {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #38bdf8;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+header span {
+    color: #f43f5e;
+}
+
+/* Kotak Utama / Glassmorphism Pro */
+.card {
+    background: rgba(15, 23, 42, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 22px;
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto; /* Posisi tepat di atas di bawah header */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+}
+
+.card h2 {
+    font-size: 1.45rem;
+    margin-bottom: 6px;
+    color: #f8fafc;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    margin-bottom: 16px;
+}
+
+/* Input & Button */
+.input-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.input-group input {
+    flex: 1;
+    background: rgba(30, 41, 59, 0.9);
+    border: 1px solid #475569;
+    border-radius: 12px;
+    padding: 12px 14px;
+    color: #fff;
+    font-size: 0.9rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+.input-group button {
+    background: linear-gradient(135deg, #0284c7, #2563eb);
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.input-group button:active {
+    transform: scale(0.95);
+}
+
+/* Status & Results */
+.status {
+    font-size: 0.85rem;
+    color: #fde047;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.result-box {
+    margin-top: 15px;
+    background: rgba(30, 41, 59, 0.95);
+    border: 1px solid #334155;
+    border-radius: 15px;
+    padding: 12px;
+}
+
+.result-info {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.result-info img {
+    width: 55px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #38bdf8;
+}
+
+.result-info p {
+    font-size: 0.78rem;
+    color: #e2e8f0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: #0284c7;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn-primary:hover {
+    background: #0369a1;
+}
+
+.btn-secondary {
+    background: #334155;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn-secondary:hover {
+    background: #475569;
+}
+
+/* Footer tetap di paling bawah layar */
+footer {
+    margin-top: auto;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #f8fafc;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
+    padding: 8px;
+}
+/* Styling tombol khusus audio MP3 & Original */
+.btn-audio {
+    background: #0f172a;
+    color: #38bdf8;
+    border: 1px solid #38bdf8;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn-audio:hover {
+    background: #1e293b;
+}

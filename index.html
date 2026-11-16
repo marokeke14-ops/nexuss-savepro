@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusSave Pro - Media Downloader</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Latar Belakang Anime Live Wallpaper -->
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="bg.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+
+    <!-- Konten Utama -->
+    <div class="container">
+        <header>
+            <h1>NEXUS<span>SAVE</span> PRO</h1>
+        </header>
+
+        <main class="card">
+            <h2>TikTok Downloader</h2>
+            <p class="subtitle">Unduh video TikTok profesional tanpa watermark dengan berbagai pilihan resolusi.</p>
+
+            <div class="input-group">
+                <input type="text" id="urlInput" placeholder="Tempel tautan TikTok di sini..." autocomplete="off">
+                <button id="downloadBtn">Proses</button>
+            </div>
+
+            <p id="statusText" class="status hidden">⏳ Menghubungkan ke server media...</p>
+
+            <div id="resultArea" class="result-box hidden">
+                <div class="result-info">
+                    <img id="videoThumb" src="" alt="Thumbnail">
+                    <p id="videoTitle">Judul video akan muncul di sini...</p>
+                </div>
+                
+                <!-- Pilihan Resolusi & Format Unduhan -->
+                <div class="btn-group">
+                    <a id="downloadHD" href="#" target="_blank" class="btn-primary">⚡ Download HD (1080p / No WM)</a>
+                    <a id="downloadWatermark" href="#" target="_blank" class="btn-secondary">💧 Download Original (With Watermark)</a>
+                    <a id="downloadAudio" href="#" target="_blank" class="btn-audio">🎵 Download Audio MP3</a>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            Platform Media Manager &bull; Dikembangkan oleh Apip
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
